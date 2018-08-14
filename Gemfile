@@ -17,5 +17,5 @@ else
   gem 'facter', :require => false, :groups => [:test]
 end
 
-ENV['PUPPET_VERSION'].nil? ? puppetversion = '~> 4.5.0' : puppetversion = ENV['PUPPET_VERSION'].to_s
+ENV['PUPPET_VERSION'].nil? ? puppetversion = '~> 5.3.0' : puppetversion = ENV['PUPPET_VERSION'].to_s
 gem 'puppet', puppetversion, :require => false, :groups => [:test]
