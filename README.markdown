@@ -1,7 +1,7 @@
 # To utilize
 
 ~~~
-docker run -v `pwd`:/code cyberious/rspec_puppet:5.3
+docker run -v `pwd`:/code cyberious/rspec_puppet:5.5
 ~~~
 
 To create a rake task to do this for you can include the following in your Rakefile, this does require the gem `docker-api`

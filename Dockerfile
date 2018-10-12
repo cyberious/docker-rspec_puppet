@@ -2,7 +2,7 @@ FROM ruby:2.4.4
 
 MAINTAINER Cyberious
 
-ENV PUPPET_VERSION '~> 5.3.7'
+ENV PUPPET_GEM_VERSION '~> 5.5.0'
 
 RUN gem install bundler
 

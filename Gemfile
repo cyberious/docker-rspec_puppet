@@ -11,11 +11,11 @@ group :test do
   gem 'puppetlabs_spec_helper',  :require => false
 end
 
-if facterversion = ENV['FACTER_VERSION']
+if facterversion = ENV['FACTER_GEM_VERSION']
   gem 'facter', facterversion.to_s, :require => false, :groups => [:test]
 else
   gem 'facter', :require => false, :groups => [:test]
 end
 
-ENV['PUPPET_VERSION'].nil? ? puppetversion = '~> 5.3.0' : puppetversion = ENV['PUPPET_VERSION'].to_s
+ENV['PUPPET_GEM_VERSION'].nil? ? puppetversion = '~> 5.5.0' : puppetversion = ENV['PUPPET_GEM_VERSION'].to_s
 gem 'puppet', puppetversion, :require => false, :groups => [:test]
