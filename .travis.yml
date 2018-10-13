@@ -1,0 +1,19 @@
+sudo: required
+
+language: ruby
+
+services:
+  - docker
+
+env:
+  - PUPPET_VERSION=4.10
+  - PUPPET_VERSION=5.3
+  - PUPPET_VERSION=5.5
+  - PUPPET_VERSION=6.0
+
+before_install:
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+
+script:
+  - 'make puppet_${PUPPET_VERSION}'
+  - 'make push_puppet_${PUPPET_VERSION}'

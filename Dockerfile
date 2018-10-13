@@ -1,8 +1,11 @@
-FROM ruby:2.4.4
+ARG RUBY_VERSION
+
+FROM ruby:${RUBY_VERSION}
 
 MAINTAINER Cyberious
 
-ENV PUPPET_GEM_VERSION '~> 5.5.0'
+ARG PUPPET_VERSION
+ENV PUPPET_GEM_VERSION $PUPPET_VERSION
 
 RUN gem install bundler
 
@@ -12,6 +15,6 @@ RUN chmod +x /scripts/spec.sh
 
 WORKDIR /scripts/
 
-RUN bundle install
+RUN PUPPET_GEM_VERSION=${PUPPET_VERSION} bundle install
 
-CMD "/scripts/spec.sh"
+CMD ["sh", "-c", "PUPPET_GEM_VERSION=${PUPPET_VERSION} /scripts/spec.sh"]
