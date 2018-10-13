@@ -19,6 +19,7 @@ matrix:
       env: PUPPET_VERSION=5.5
     - name: Puppet 6.0
       env: PUPPET_VERSION=6.0
-  script:
-    - 'make puppet_${PUPPET_VERSION}'
-    - 'make push_puppet_${PUPPET_VERSION}'
+      
+script:
+  - 'make puppet_${PUPPET_VERSION}'
+  - 'make push_puppet_${PUPPET_VERSION}'
